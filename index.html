@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بازی مار نوکیا در مرورگر با تاریخچه امتیاز، تنظیم سرعت و پوستههای مختلف" />
+  <title>Snake 3310 | مار نوکیا</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <p class="eyebrow">RETRO ARCADE · 3310 EDITION</p>
+      <h1>مار نوکیا <span>SNAKE 3310</span></h1>
+      <p class="lead">همان مار کلاسیک، با امتیازهای ذخیرهشده، سرعت قابل تنظیم و چهار پوسته مختلف.</p>
+    </header>
+
+    <div class="layout">
+      <section class="phone" aria-label="دستگاه بازی">
+        <div class="phone-top">
+          <span class="speaker"></span>
+          <span class="phone-model">3310</span>
+        </div>
+
+        <div class="screen-frame">
+          <div class="screen" dir="ltr">
+            <div class="hud">
+              <span>SCORE <strong id="score">0</strong></span>
+              <span>HI <strong id="best">0</strong></span>
+              <span id="speedHud">SPD 2</span>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="board" width="400" height="400" aria-label="صفحه بازی مار"></canvas>
+              <div class="overlay" id="overlay">
+                <p class="overlay-title" id="overlayTitle">SNAKE 3310</p>
+                <p class="overlay-text" id="overlayText">برای شروع Space بزنید</p>
+              </div>
+            </div>
+            <div class="screen-bottom">
+              <span id="statusText">READY</span>
+              <span>◄ ► ▲ ▼</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dpad" aria-label="دکمههای جهت">
+          <button class="key key-up" data-dir="up" aria-label="بالا">▲</button>
+          <button class="key key-left" data-dir="left" aria-label="چپ">◀</button>
+          <button class="key key-ok" id="okBtn" aria-label="شروع یا توقف">OK</button>
+          <button class="key key-right" data-dir="right" aria-label="راست">▶</button>
+          <button class="key key-down" data-dir="down" aria-label="پایین">▼</button>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <section class="card">
+          <h2>تنظیمات بازی</h2>
+          <label class="field" for="speedSelect">
+            <span>سرعت مار</span>
+            <select id="speedSelect"></select>
+          </label>
+          <label class="field" for="skinSelect">
+            <span>قیافه مار</span>
+            <select id="skinSelect"></select>
+          </label>
+          <label class="switch">
+            <input type="checkbox" id="soundToggle" />
+            <span>صدای کوتاه هنگام خوردن و پایان بازی</span>
+          </label>
+          <div class="actions">
+            <button class="btn btn-primary" id="startBtn">شروع / توقف</button>
+            <button class="btn" id="restartBtn">شروع مجدد</button>
+          </div>
+          <p class="hint">تنظیمات و امتیازها در همین مرورگر ذخیره میشوند.</p>
+        </section>
+
+        <section class="card">
+          <h2>تاریخچه امتیازها</h2>
+          <div class="stats">
+            <div><span>بازیها</span><strong id="statGames">0</strong></div>
+            <div><span>بهترین</span><strong id="statBest">0</strong></div>
+            <div><span>میانگین</span><strong id="statAvg">0</strong></div>
+          </div>
+          <ol class="history" id="historyList"></ol>
+          <button class="btn btn-danger" id="clearBtn">پاک کردن تاریخچه</button>
+        </section>
+
+        <section class="card help">
+          <h2>راهنما</h2>
+          <ul>
+            <li><kbd>←</kbd><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd> یا <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> برای حرکت</li>
+            <li><kbd>Space</kbd> یا <kbd>Enter</kbd> شروع / توقف</li>
+            <li><kbd>R</kbd> شروع مجدد</li>
+            <li>روی موبایل از دکمههای جهت یا کشیدن انگشت روی صفحه استفاده کنید.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="app-footer">ساخته شده با HTML، CSS و JavaScript vanilla — بدون هیچ وابستگی.</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
